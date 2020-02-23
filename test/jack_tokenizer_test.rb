@@ -22,6 +22,7 @@ class JackTokenizerTest < Minitest::Test
       expected_tokens = File.readlines("./test/fixtures/#{expected}").map(&:strip)
       JackTokenizer.new("./test/fixtures/#{source}").run
       actual_tokens = File.readlines("./test/fixtures/#{actual}").map(&:strip)
+
       assert_equal expected_tokens, actual_tokens, highlight: true
     end
   end
