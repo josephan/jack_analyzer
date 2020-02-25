@@ -15,4 +15,4 @@ jobs:
         ruby-version: 2.6.x
     - name: Run tests
       run: |
-        ruby -I . -e "require 'minitest/autorun'; Dir.glob('**/*_test.rb') { |f| require(f) }"
+        ruby -I . -e "require 'minitest/autorun'; Dir.glob('**/*_test.rb') { |f| require_relative(f) }"
