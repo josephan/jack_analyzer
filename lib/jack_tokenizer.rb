@@ -12,6 +12,8 @@ class JackTokenizer
   INT_CONST_TYPE = "integerConstant"
   STRING_CONST_TYPE = "stringConstant"
 
+  attr_reader :tokens, :source_filepath
+
   def initialize(source_filepath)
     @source_filepath = source_filepath
     @chars = []
@@ -160,9 +162,7 @@ class JackTokenizer
   end
 
   def xml_token_filepath
-    filename = File.basename(@source_filepath, ".jack") + "T.xml"
-    path_to_file = File.dirname(@source_filepath)
-    path_to_file + "/" + filename
+    @source_filepath.gsub(".jack", "T.xml")
   end
 
   def format_token_to_xml(token)
