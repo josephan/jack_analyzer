@@ -1,5 +1,5 @@
-require "minitest/autorun"
 require "minitest/test"
+require "minitest/autorun"
 require_relative "../lib/compilation_methods.rb"
 
 class DummyClass

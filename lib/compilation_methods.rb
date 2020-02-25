@@ -1,6 +1,4 @@
 require_relative "./jack_tokenizer.rb"
-require 'pry-stack_explorer'
-require 'pry-byebug'
 
 module CompilationMethods
   # Program structure
