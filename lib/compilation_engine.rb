@@ -12,11 +12,10 @@ class CompilationEngine
   end
 
   def run
-    # assemble program structure
     structure = compile_class(@tokens)
 
     xml = self.class.format_to_xml(structure)
-    # save to file
+
     write_to_file(xml)
   end
 
@@ -35,12 +34,12 @@ class CompilationEngine
   private
 
   def write_to_file(xml)
-    File.open(xml_structure_filepath, "w") do |f|
+    File.open(xml_structure_filepath, "w+") do |f|
       f.puts(xml)
     end
   end
 
   def xml_structure_filepath
-    @source_filepath.gsub("jack", "xml")
+    @source_filepath.gsub(".jack", ".xml")
   end
 end
